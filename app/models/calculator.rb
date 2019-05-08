@@ -2,8 +2,7 @@ class Calculator
 
   def self.evaluate_string(string)
     array = parse_string(string)
-
-
+    evaluate_array(array)
   end
 
   def self.parse_string(string)
@@ -34,9 +33,9 @@ class Calculator
       index = 0
     end
 
-    a = array.delete_at(index)
+    a = array.delete_at(index).to_f
     operator = array.delete_at(index)
-    b = array.delete_at(index)
+    b = array.delete_at(index).to_f
 
     array.insert(index, a.send(operator, b))
 
