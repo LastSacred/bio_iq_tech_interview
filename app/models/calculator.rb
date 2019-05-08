@@ -28,11 +28,17 @@ class Calculator
   end
 
   def self.evaluate_array(array)
-    a = array.shift
-    operator = array.shift
-    b = array.shift
+    if index = array.find_index(:*) || array.find_index(:/)
+      index = index - 1
+    else
+      index = 0
+    end
 
-    array.unshift(a.send(operator, b))
+    a = array.delete_at(index)
+    operator = array.delete_at(index)
+    b = array.delete_at(index)
+
+    array.insert(index, a.send(operator, b))
 
     return array[0] if array.count == 1
 
