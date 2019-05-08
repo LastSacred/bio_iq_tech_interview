@@ -1,0 +1,11 @@
+<h1>String Calculator</h1>
+<div>
+  <%= form_tag("/calculator") do %>
+  String: <%= text_field_tag "string" %>
+  <%= submit_tag "Calculate" %>
+  <% end %>
+</div>
+
+<br>
+
+<div><%= @result if @result %></div>
