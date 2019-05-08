@@ -5,6 +5,8 @@ class Calculator
     evaluate_array(array)
   end
 
+  private
+
   def self.parse_string(string)
     operators = ['+','-','*','/']
     string = string.split('')
@@ -39,7 +41,14 @@ class Calculator
 
     array.insert(index, a.send(operator, b))
 
-    return array[0] if array.count == 1
+    if array.count == 1
+      result = array[0]
+      result = result.to_i if result == result.to_i
+
+      return result.round(2)
+    end
+
+    return array[0].round(2) if array.count == 1
 
     return evaluate_array(array)
   end
