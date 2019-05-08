@@ -1,7 +1,7 @@
 class Calculator
 
   def self.evaluate_string(string)
-    array = [string]
+    array = parse_string(string)
 
 
   end
@@ -27,8 +27,16 @@ class Calculator
     array
   end
 
-  def self.evaluate(a, operator, b)
-    a.send(operator, b)
+  def self.evaluate_array(array)
+    a = array.shift
+    operator = array.shift
+    b = array.shift
+
+    array.unshift(a.send(operator, b))
+
+    return array[0] if array.count == 1
+
+    return evaluate_array(array)
   end
 
 end
