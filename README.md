@@ -1,25 +1,6 @@
-# README
+To run the application start the server with `rails s` and go to `http://localhost:3000/calculator` in your browser.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# bio_iq_tech_interview
+In the interest of full disclosure, I did not finish this project in an hour.
+In about an hour I had only the Calculator.parse_string method complete
+I committed often so you could see my timeline, but there were interruptions due to other appointments.
+I estimate it took me about 3 hours total with tests and everything.
